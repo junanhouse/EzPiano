@@ -1,1 +1,5 @@
 rootProject.name = 'Ezpiano'
+include 'module-domain'
+include 'module-web'
+include 'module-api'
+
