@@ -1,4 +1,4 @@
-package com.ezpiano.moduleweb.Users;
+package com.ezpiano.moduleapi.controller;
 
 import com.ezpiano.Ezpiano.dto.Users.LoginDefaultRes;
 import com.ezpiano.Ezpiano.dto.Users.LoginReq;

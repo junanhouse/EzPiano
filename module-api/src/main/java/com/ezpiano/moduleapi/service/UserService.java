@@ -2,7 +2,7 @@ package com.ezpiano.moduleapi.service;
 
 import com.ezpiano.Ezpiano.dto.Users.SignUpDefaultReq;
 import com.ezpiano.Ezpiano.entity.User;
-import com.ezpiano.Ezpiano.repository.Users.MemoryUserRepository;
+import com.ezpiano.moduleapi.repository.Users.MemoryUserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

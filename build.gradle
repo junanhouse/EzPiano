@@ -35,16 +35,10 @@ subprojects{
 }
 project(':module-api') {
 	dependencies {
-		api project(':module-domain')
+		api project(':module-common')
 	}
 }
-project(':module-web') {
-	dependencies {
-		api project(':module-domain')
-		api project(':module-api')
-	}
-}
-project(':module-domain'){
+project(':module-common'){
 	bootJar{enabled = false}
 	jar {enabled = true}
 }

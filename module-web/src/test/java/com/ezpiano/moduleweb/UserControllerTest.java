@@ -3,7 +3,7 @@ package com.ezpiano.moduleweb;
 import com.ezpiano.Ezpiano.dto.Users.SignUpDefaultReq;
 import com.ezpiano.Ezpiano.dto.Users.SignUpDefaultRes;
 import com.ezpiano.moduleapi.service.UserService;
-import com.ezpiano.moduleweb.Users.UserController;
+import com.ezpiano.moduleapi.controller.UserController;
 import com.google.gson.Gson;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -15,7 +15,6 @@ import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.ResultActions;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 

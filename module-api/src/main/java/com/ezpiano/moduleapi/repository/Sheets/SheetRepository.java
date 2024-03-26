@@ -1,4 +1,4 @@
-package com.ezpiano.Ezpiano.repository.Sheets;
+package com.ezpiano.moduleapi.repository.Sheets;
 
 import com.ezpiano.Ezpiano.entity.Sheets;
 

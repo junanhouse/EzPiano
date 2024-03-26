@@ -1,7 +1,6 @@
-package com.ezpiano.Ezpiano.repository.Sheets;
+package com.ezpiano.moduleapi.repository.Sheets;
 
 import com.ezpiano.Ezpiano.entity.Sheets;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;

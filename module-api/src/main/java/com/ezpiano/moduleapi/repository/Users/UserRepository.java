@@ -1,4 +1,4 @@
-package com.ezpiano.Ezpiano.repository.Users;
+package com.ezpiano.moduleapi.repository.Users;
 
 import com.ezpiano.Ezpiano.entity.User;
 
