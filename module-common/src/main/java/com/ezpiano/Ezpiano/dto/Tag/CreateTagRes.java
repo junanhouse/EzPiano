@@ -1,0 +1,13 @@
+package com.ezpiano.Ezpiano.dto.Tag;
+
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+
+@Data
+@AllArgsConstructor
+@Builder
+public class CreateTagRes<T> {
+    private boolean success;
+    private T data;
+}

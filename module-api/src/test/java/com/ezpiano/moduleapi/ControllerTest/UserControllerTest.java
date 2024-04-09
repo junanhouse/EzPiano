@@ -1,4 +1,4 @@
-package com.ezpiano.moduleapi;
+package com.ezpiano.moduleapi.ControllerTest;
 
 import com.ezpiano.Ezpiano.dto.Users.LoginDefaultRes;
 import com.ezpiano.Ezpiano.dto.Users.LoginReq;

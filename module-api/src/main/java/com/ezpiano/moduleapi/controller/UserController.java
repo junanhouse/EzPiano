@@ -7,6 +7,8 @@ import com.ezpiano.Ezpiano.dto.Users.SignUpDefaultRes;
 import com.ezpiano.Ezpiano.entity.User;
 import com.ezpiano.moduleapi.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -21,9 +23,10 @@ public class UserController {
     }
 
     @PostMapping("/login")
+    @ResponseBody
     public LoginDefaultRes login(@RequestBody LoginReq loginReq) {
-        userService.login(loginReq.getUserId(), loginReq.getPassword());
-        return LoginDefaultRes.res(); // Response Entity
+        String token = userService.login(loginReq.getUserId(), loginReq.getPassword());
+        return LoginDefaultRes.res(token);
     }
 
     @GetMapping("/list") // 테스트용 임시 메소드

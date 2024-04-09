@@ -11,9 +11,9 @@ public class LoginDefaultRes {
     private Integer expires_in;
     private String token;
 
-    public static LoginDefaultRes res() {
+    public static LoginDefaultRes res(String token) {
         return LoginDefaultRes.builder()
-                .token("token")
+                .token(token)
                 .expires_in(36000)
                 .build();
     }

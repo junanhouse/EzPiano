@@ -9,7 +9,7 @@ import java.util.List;
 @Data
 @AllArgsConstructor
 @Builder
-public class SheetCreateReq<T> {
+public class CreateSheetReq<T> {
     private String title;
     private boolean status;
     private String description;

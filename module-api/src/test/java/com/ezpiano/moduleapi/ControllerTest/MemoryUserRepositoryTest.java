@@ -1,4 +1,4 @@
-package com.ezpiano.moduleapi;
+package com.ezpiano.moduleapi.ControllerTest;
 
 import com.ezpiano.Ezpiano.entity.User;
 import com.ezpiano.moduleapi.repository.Users.MemoryUserRepository;

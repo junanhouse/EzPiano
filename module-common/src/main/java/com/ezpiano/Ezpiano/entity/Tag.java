@@ -1,4 +1,10 @@
 package com.ezpiano.Ezpiano.entity;
 
-public class Tags {
+import lombok.Data;
+
+@Data
+public class Tag {
+    private String title;
+    private String color;
+    private String userId;
 }

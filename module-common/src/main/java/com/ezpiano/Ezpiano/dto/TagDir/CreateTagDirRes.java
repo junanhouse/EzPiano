@@ -1,2 +1,11 @@
-package com.ezpiano.Ezpiano.dto.TagDir;public class CreateTagRes {
+package com.ezpiano.Ezpiano.dto.TagDir;
+
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+
+@Data
+@AllArgsConstructor
+@Builder
+public class CreateTagDirRes {
 }

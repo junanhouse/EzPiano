@@ -17,8 +17,7 @@ public class UserService {
     public UserService(MemoryUserRepository memoryUserRepository) { this.memoryUserRepository = memoryUserRepository; }
 
     public void save(SignUpDefaultReq signUpDefaultReq) {
-        User user = signUpDefaultReq.toEntity();
-        memoryUserRepository.save(user);
+        memoryUserRepository.save(signUpDefaultReq.toEntity());
     }
 
     public Optional<User> findById(String userId) {
@@ -28,7 +27,6 @@ public class UserService {
     public List<User> findAll(){ return memoryUserRepository.findAll(); }
 
     public String login(String userId, String password) {
-
         validateDuplicateLogin(userId, password);
         return userId;
 
