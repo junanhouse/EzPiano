@@ -12,6 +12,7 @@ import com.ezpiano.moduleapi.repository.Users.UserRepository;
 import com.ezpiano.moduleapi.service.UserService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.assertj.core.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -26,10 +27,12 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
+import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
 import java.util.List;
 import java.util.Optional;
 
+import static org.assertj.core.api.Assertions.assertThatIllegalStateException;
 import static org.mockito.Mockito.*;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
@@ -41,30 +44,27 @@ public class UserControllerTest {
     private MockMvc mockMvc;
 
     @MockBean
-    private MemoryUserRepository memoryUserRepository;
+    private UserService userService;
+
     @Test
     public void login() throws Exception {
         LoginReq req = new LoginReq("testId", "hashed");
-
+        when(userService.login("testId", "hased")).thenReturn("testId");
         mockMvc.perform(post("/auth/login")
                     .contentType(MediaType.APPLICATION_JSON)
-                    .contentType(new ObjectMapper().writeValueAsString(req)))
-                .andExpect(jsonpath("$.token").value("token"));
+                    .content(new ObjectMapper().writeValueAsString(req)))
+                .andExpect(MockMvcResultMatchers.jsonPath("$.token").value("testId"));
+
      }
-
     @Test
-    public void signUp(){
-        SignUpDefaultReq req = new SignUpDefaultReq("testId", "testusername", "test@test.com",
-                "hashed", "20240331");
+    public void signUp() throws Exception{
+        SignUpDefaultReq req = new SignUpDefaultReq("testId", "hased", "test@test.com",
+                "hashed", "20240305");
 
-
-        //when(userService.findById(req.getUserId())).thenReturn();
-        SignUpDefaultRes result = userController.signUp(req);
-
-
-        assertThat().isEqualTo();
-
-
+        mockMvc.perform(post("/auth/signup")
+                .contentType(MediaType.APPLICATION_JSON)
+                .content(new ObjectMapper().writeValueAsString(req)))
+                .andExpect(MockMvcResultMatchers.jsonPath("$.success").value(true));
     }
 
 }
