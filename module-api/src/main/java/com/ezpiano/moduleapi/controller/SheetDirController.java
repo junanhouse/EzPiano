@@ -1,9 +1,7 @@
 package com.ezpiano.moduleapi.controller;
 
 import com.ezpiano.Ezpiano.dto.SheetDir.CreateSheetDirReq;
-import com.ezpiano.Ezpiano.dto.SheetDir.CreateSheetDirRes;
-import com.ezpiano.Ezpiano.dto.SheetDir.SheetDirDetailRes;
-import com.ezpiano.Ezpiano.dto.SheetDir.SheetDirListRes;
+import com.ezpiano.Ezpiano.dto.SheetDir.SheetDirRes;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -11,20 +9,29 @@ import org.springframework.web.bind.annotation.*;
 public class SheetDirController {
 
     @GetMapping()
-    public SheetDirListRes sheetDirList(@RequestParam("page") int page) {
-        SheetDirListRes sheetDirListRes = new SheetDirListRes();
-        return sheetDirListRes;
+    public SheetDirRes sheetDirList(@RequestParam("page") String page) {
+        //SheetDir data = sheetDirService.findAll()
+        //data -> SheetListDto
+        return SheetDirRes.res(Integer.parseInt(page), true, "data");
+
     }
 
     @GetMapping("/{id}")
-    public SheetDirDetailRes sheetDirDetail(@PathVariable("id") String sheetDirId){
-        SheetDirDetailRes sheetDirDetailRes = new SheetDirDetailRes();
-        return sheetDirDetailRes;
+    public SheetDirRes sheetDirDetail(@PathVariable("id") String sheetDirId){
+        // SheetDir sheetDir = sheetDirService.findById(sheetDirId)
+        // Sheet sheet = sheetService.findBysheetDirId(sheetDirId)
+        // sheetDir, sheet -> SheetDetailDto --> 뭔가 비효율적인거 같은데....
+
+        // case 1)SheetDirRes data = sheetSheetDirService(sheetDirId)
+        return SheetDirRes.res(true, "data");
     }
 
     @PostMapping()
-    public CreateSheetDirRes createSheetDir(@RequestBody CreateSheetDirReq createSheetDirReq){
-        CreateSheetDirRes createSheetDirRes = new CreateSheetDirRes();
-        return createSheetDirRes;
+    public SheetDirRes createSheetDir(@RequestBody CreateSheetDirReq createSheetDirReq){
+        // createDirReq.toEntity()
+        // save()
+        // data = get sheetDirList(page = 1)
+        return SheetDirRes.res(true, "data");
+
     }
 }

@@ -1,6 +1,6 @@
 package com.ezpiano.moduleapi.repository.Sheets;
 
-import com.ezpiano.Ezpiano.entity.Sheets;
+import com.ezpiano.Ezpiano.entity.Sheet;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -9,17 +9,17 @@ import java.util.List;
 public class MemorySheetRepository implements SheetRepository{
 
     @Override
-    public Sheets save(Sheets sheet) {
+    public Sheet save(Sheet sheet) {
         return null;
     }
 
     @Override
-    public List<Sheets> sheetList() {
+    public List<Sheet> sheetList() {
         return null;
     }
 
     @Override
-    public Sheets sheetDetail(String user_id, int sheet_id) {
+    public Sheet sheetDetail(String user_id, int sheet_id) {
         return null;
     }
 }

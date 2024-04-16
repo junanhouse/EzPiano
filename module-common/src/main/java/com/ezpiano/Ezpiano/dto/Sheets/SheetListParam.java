@@ -6,8 +6,7 @@ import lombok.Data;
 
 @Data
 @Builder
-@AllArgsConstructor
-public class SheetListReq {
+public class SheetListParam {
     private boolean status;
     private String tagDir;
     private String directoryId;

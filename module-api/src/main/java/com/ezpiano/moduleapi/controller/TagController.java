@@ -8,21 +8,26 @@ import org.springframework.web.bind.annotation.*;
 public class TagController {
 
     @GetMapping()
-    public TagListRes tagList(@RequestParam("page") int page){
-        TagListRes tagListRes = new TagListRes(1, true, null);
-        return tagListRes;
+    public TagRes tagList(@RequestParam("page") int page){
+        // List<Tag> tags = tagService.findAll(page);
+        // TagDto data = new TagDto.of(tags) <<<< List
+
+        return TagRes.res("data", true, page);
     }
     @GetMapping("/tag/{id}")
-    public TagDetailRes tagDetail(@PathVariable("id") String tagId){
-        TagDetailRes tagDetailRes = new TagDetailRes(true, null);
-        return tagDetailRes;
+    public TagRes tagDetail(@PathVariable("id") String tagId){
+        // Tag tag = tagService.findById(tagId)
+        // TagDto data = new TagDto.of(tag) --> new 사용 x static ?
+
+        return TagRes.res("data", true);
     }
 
 
     @PostMapping()
-    public CreateTagRes createTag(@RequestBody CreateTagReq createTagReq){
-        CreateTagRes createTagRes = new CreateTagRes(true, null);
-        return createTagRes;
+    public TagRes createTag(@RequestBody CreateTagReq createTagReq){
+        // Tag tag = tagService.create(createTagReq)
+        // TagDot data = new TagDto.of(tag)
+        return TagRes.res("data", true);
 
     }
 }

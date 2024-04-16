@@ -1,9 +1,13 @@
-package com.ezpiano.Ezpiano.entity;
+package com.ezpiano.Ezpiano.dto.Sheets;
 
+import lombok.Builder;
 import lombok.Data;
 
+import java.util.List;
+
 @Data
-public class Sheets {
+@Builder
+public class SheetDetailDto<T> {
     private int sheetId;
     private String title;
     private String lastPlayed;
@@ -12,8 +16,7 @@ public class Sheets {
     private String createdAt;
     private int practiceSum;
     private String description;
+    private String directoryId;
+    private List<T> tags;
 
-
-    private String directoryID; // 나중에 fk 변경, fk 안쓰고
-    private String userId; // fk
 }

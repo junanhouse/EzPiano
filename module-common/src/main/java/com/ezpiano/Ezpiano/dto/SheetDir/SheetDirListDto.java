@@ -7,5 +7,6 @@ import lombok.Data;
 @Data
 @AllArgsConstructor
 @Builder
-public class SheetDirListRes {
+public class SheetDirListDto {
+    private String directoryName;
 }
