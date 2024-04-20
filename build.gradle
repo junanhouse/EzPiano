@@ -1,0 +1,44 @@
+plugins {
+	id 'org.springframework.boot' version '3.2.3'
+	id 'io.spring.dependency-management' version '1.1.4'
+	id 'java-library'
+}
+
+allprojects{
+	group = 'com.ezpiano'
+	version = '0.0.1-SNAPSHOT'
+	sourceCompatibility = '17'
+
+	repositories {
+		mavenCentral()
+	}
+
+}
+
+subprojects{
+	apply plugin: 'java-library'
+	apply plugin: 'org.springframework.boot'
+	apply plugin: 'io.spring.dependency-management'
+
+	dependencies {
+		implementation 'org.springframework.boot:spring-boot-starter-web'
+		testImplementation 'org.springframework.boot:spring-boot-starter-test'
+		compileOnly 'org.projectlombok:lombok'
+		annotationProcessor 'org.projectlombok:lombok'
+		testImplementation 'org.mockito:mockito-core:4.8.0'
+		implementation 'com.google.code.gson:gson:2.8.7'
+	}
+
+	tasks.named('test') {
+		useJUnitPlatform()
+	}
+}
+project(':module-api') {
+	dependencies {
+		api project(':module-common')
+	}
+}
+project(':module-common'){
+	bootJar{enabled = false}
+	jar {enabled = true}
+}
