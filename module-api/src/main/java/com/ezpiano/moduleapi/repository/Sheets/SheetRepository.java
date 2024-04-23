@@ -5,7 +5,9 @@ import com.ezpiano.Ezpiano.entity.Sheet;
 import java.util.List;
 
 public interface SheetRepository {
-    Sheet save(Sheet sheet);
+    void save(Sheet sheet);
     List<Sheet> sheetList();
-    Sheet sheetDetail(String user_id, int sheet_id);
+    Sheet sheetDetail(String userId, long sheetId);
+    Sheet sheetUpdate(long sheetId, Sheet updatedSheet);
+
 }
