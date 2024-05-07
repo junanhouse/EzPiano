@@ -1,5 +1,6 @@
 package com.ezpiano.Ezpiano.dto.Sheets;
 
+import com.ezpiano.Ezpiano.entity.Tag;
 import lombok.Builder;
 import lombok.Data;
 
@@ -17,6 +18,6 @@ public class SheetDetailDto<T> {
     private int practiceSum;
     private String description;
     private String directoryId;
-    private List<T> tags;
+    private List<Tag> tags;
 
 }

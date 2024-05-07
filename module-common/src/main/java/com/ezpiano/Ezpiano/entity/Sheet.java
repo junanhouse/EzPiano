@@ -6,7 +6,7 @@ import lombok.Data;
 @Data
 @Builder
 public class Sheet {
-    private int sheetId;
+    private long sheetId;
     private String title;
     private String lastPlayed;
     private boolean status;

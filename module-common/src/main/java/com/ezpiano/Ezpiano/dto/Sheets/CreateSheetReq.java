@@ -1,6 +1,7 @@
 package com.ezpiano.Ezpiano.dto.Sheets;
 
 import com.ezpiano.Ezpiano.entity.Sheet;
+import com.ezpiano.Ezpiano.entity.Tag;
 import com.ezpiano.Ezpiano.entity.TagSheetRNTN;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -19,7 +20,7 @@ public class CreateSheetReq<T> {
     private String directoryId;
     private String imgUrl;
     @Builder.Default
-    private List<T> tags = new ArrayList<>();
+    private List<Tag> tags = new ArrayList<>();
 
 
     public Sheet toEntity(){
